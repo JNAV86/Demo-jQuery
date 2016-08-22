@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--
+
+  Final Project
+  Date: 04-25-2016
+  Author: Joshua Cogburn
+  Description:
+  This application demonstrates bacis javascript and jQuery functionality and
+  concepts such as widgets, objects, effects, and forms.
+
+  -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="final-project">
+    <meta name="author" content="joshua cogburn">
+
+    <title>Final Project</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!-- Custom CSS -->
+    <link href="simple-sidebar.css" rel="stylesheet">
+
+    <!-- Dropdown Menu CSS -->
+    <link rel="stylesheet" href="dropdown.css">
+
+</head>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<body>
+
+  <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                  <a href="#">Sidebar</a>
+              </li>
+              <li id="widgets-side">
+                  <a href="#widgets-sec">Widgets</a>
+              </li>
+              <li id="effects-side">
+                  <a href="#effects-sec">Effects</a>
+              </li>
+              <li id="objects-side">
+                  <a href="#objects-sec">Objects</a>
+              </li>
+              <li id="forms-side">
+                  <a href="#forms-sec">Forms</a>
+              </li>
+          </ul>
+      </div>
+      <!-- /#sidebar-wrapper-->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+                <h1>Dashboard</h1>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar</a>
+            </div>
+          </div><br><hr><br>
+
+        <section id="widgets-sec">
+          <div class="jumbotron">
+            <h1>Drop Menu</h1>
+            <ul class="dropdown">
+              <li class=""><a href="#">Menu</a>
+                <ul class="sub_menu" style="visibility: hidden;">
+                  <li><a href="#widgets-sec">Widgets</a></li>
+                  <li><a href="#effects-sec">Effects</a></li>
+                  <li><a href="#objects-sec">Objects</a></li>
+                  <li><a href="#forms-sec">Forms</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br><!-- /dropdown -->
+
+          <div class="jumbotron">
+            <h1>Tabs</h1>
+            <button id="tabsBtn" class="btn btn-default">Tabs</button>
+            <div id="tabs" style="display:none">
+              <ul>
+                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                <li><a href="#tabs-2">Proin dolor</a></li>
+                <li><a href="#tabs-3">Aenean lacinia</a></li>
+              </ul>
+              <div id="tabs-1">
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. </p>
+              </div>
+              <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra </p>
+              </div>
+              <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede </p>
+              </div>
+            </div>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br><!-- /tabs -->
+
+          <div class="jumbotron">
+            <h1>Dialog</h1>
+            <div id="dialog-form" title="Create new user">
+              <p class="validateTips">All form fields are required.</p>
+              <form>
+                <fieldset>
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" value="Steve Jobs" class="form-control">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" value="steve@apple.com" class="form-control">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password" value="xxxxxxx" class="form-control">
+                  <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                  <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="users-contain" class="ui-widget">
+              <h1>Users:</h1>
+              <div class="table-responsive">
+                <table id="users" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Elon Musk</td>
+                    <td>emusk@spacex.com</td>
+                    <td>i45g*7gY(Ou*@gv45j#5</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <button id="create-user" class="btn btn-default">Create new user</button>
+            <br><hr><br>
+            <!-- /dialog-sec -->
+          </div><!-- class="jumbotron"-->
+        </section><!-- /widgets-sec -->
+
+
+        <section id="effects-sec">
+          <div class="jumbotron">
+            <h1>Effects</h1>
+            <div id="div1" style="border:solid;width:300px;">
+              <p>Mauris eleifend est et turpis. Duis id erat.</p>
+            </div>
+            <button id="btnAnimate" class="btn btn-default">Animate</button>
+            <button id="btnEasing" class="btn btn-default">Easing</button>
+            <button id="btnToggle" class="btn btn-default">Toggle</button>
+            <button id="btnFadeOut" class="btn btn-default">Fade Out</button>
+          </div><!-- class="jumbotron"-->
+          <br><hr>
+        </section><!-- /effects-sec -->
+
+        <section id="objects-sec">
+          <div class="jumbotron">
+            <h1>Date</h1>
+            <div><h2 id="dateDiv1"></h2></div>
+            <div><h2 id="dateDiv"></h2></div>
+            <button type="button" id="dateBtn" class="btn btn-default">Click to get current date</button>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br>
+
+          <div class="jumbotron">
+            <h1>Math</h1>
+            <p>Enter a number.</p>
+            <input class="form-control" type="text" id="mathInput"><br>
+            <div id="mathOutput"></div><br>
+            <button type="button" id="mathBtn" class="btn btn-default">Submit</button>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br>
+
+          <div class="jumbotron">
+            <h1>Strings</h1>
+            <p id="ask">Please enter the information below.<p>
+            <form name="strForm" id="strForm">
+            <input class="form-control" type="text" name="nameStrIn" id="nameStrIn" placeholder="Name"><br>
+            <input class="form-control" type="text" name="genderStrIn" id="genderStrIn" placeholder="Gender"><br>
+            <input class="form-control" type="text" name="ageStrIn" id="ageStrIn" placeholder="Age"><br>
+            <button type="button" id="strSubBtn" class="btn btn-default">Submit</button>
+            </form>
+            <div id="strOutput">Output:</div>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br>
+
+          <div class="jumbotron">
+            <h1>Arrays</h1>
+            <p></p>
+            <div id="aryMan">
+              <form id="aryManForm">
+                <input class="form-control" id="aryIn" type="text" placeholder="Enter a string."></input><br>
+                <button id="arySubBtn" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+            <div id="aryOutput">Output:</div>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br>
+        </section><!-- /objects-sec -->
+
+        <section id="forms-sec">
+          <div class="jumbotron">
+            <h1>Forms</h1>
+            <p>Registration Form</p>
+            <form name="regForm" id="regForm" action="#" method="POST">
+              <input class="form-control" id="fName" type="text" name="fName" placeholder="First Name"></input><br>
+              <input class="form-control" id="lName" type="text" name="lName" placeholder="Last Name"></input><br>
+              <input class="form-control" id="rEmail" type="text" name="rEmail" placeholder="Email"></input><br>
+              <input class="form-control" id="pass" type="text" name="pass" placeholder="Password"></input><br>
+              <input class="form-control" id="confPass" type="text" name="confPass" placeholder="Password Confirmation"></input>
+              <br><br>
+              <button id="regBtn" type="submit" name="submit" class="btn btn-default">Submit</button>
+            </form>
+            <div id="regErrors"></div>
+          </div><!-- class="jumbotron"-->
+          <br><hr><br>
+        </section><!-- /forms-sec -->
+        </div><!-- /container-fluid -->
+      </div><!-- /page-content-wrapper -->
+    </div><!-- /wrapper -->
+
+<!-- HTML Markup -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- Javascript Dependencies -->
+
+  <!-- jQuery -->
+  <!--script src="jquery-2.2.3.js"></script-->
+  <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+  <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
+
+
+  <!-- Validate.js  -->
+  <script   src="validate.js"></script>
+  <!-- Scripts.js  -->
+  <script  type="text/javascript" src="scripts.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+  //Validate.js Registration Form Validation Logic
+    var validator = new FormValidator('regForm', [
+      {
+        name: 'fName',
+        rules: 'required|alpha'
+      },{
+        name: 'lName',
+        rules: 'required|alpha'
+      },{
+        name: 'rEmail',
+        rules: 'required|valid_email'
+      },{
+        name: 'pass',
+        rules: 'required|alpha_numeric'
+      },{
+        name: 'confPass',
+        rules: 'required|alpha_numeric'
+      }
+    ],
+    function(errors, event){
+      if(errors.length>0){
+        //show errors
+        var errorString = '';
+
+        for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+            errorString += errors[i].message + '<br />';
+        }
+
+        $("div#regErrors").append(errorString);
+      }else{
+        $("div#regErrors").append("Success!");
+      }
+    }
+  );
+  </script>
+</body>
+
+</html>
